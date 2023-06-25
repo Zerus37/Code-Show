@@ -20,7 +20,7 @@ public class BackToGallery : MonoBehaviour, IBeginDragHandler, IDragHandler
 	}
 #endif
 
-#if UNITY_IPHONE
+#if UNITY_IOS
 	[SerializeField] private float swipeDistanceNeed = 1f;
 	[SerializeField] private float swipeDistance = 0f;
 	
