@@ -3,7 +3,6 @@ using UnityEngine;
 public class AutomobileInputs : MonoBehaviour
 {
     [SerializeField] private AutomobileEngine auto;
-    [SerializeField] private CameraPOVSetter cameraPOV;
 
     private bool upInput = false;
 	private bool downInput = false;
@@ -22,19 +21,6 @@ public class AutomobileInputs : MonoBehaviour
 #if UNITY_EDITOR
 		auto.Move(new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical")));
 #else
-
-		if (cameraPOV != null)
-		{
-			if (moveVector == Vector2.zero)
-            {
-                cameraPOV.Chill();
-            }
-			else
-            {
-                cameraPOV.Active();
-            }
-        }
-
         moveVector = Vector2.zero;
         if (upInput)
             moveVector.y += 1f;
@@ -46,8 +32,6 @@ public class AutomobileInputs : MonoBehaviour
             moveVector.x += 1f;
 
         auto.Move(moveVector);
-
-
 #endif
     }
 }
