@@ -4,11 +4,11 @@ using UnityEngine.SceneManagement;
 public class PictureSceneLoader : SceneLoader
 {
 	[SerializeField] private ObjectDeactivator deactivator;
+	[SerializeField] private ProgressPopUp popUp;
 
 	private void Start()
 	{
-		PicImage.progressPopUp = GetComponent<ProgressPopUp>();
-		this.gameObject.SetActive(false);
+		PicImage.progressPopUp = popUp;
 	}
 
 	public override void LoadScene(string sceneName)
