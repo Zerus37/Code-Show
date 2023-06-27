@@ -27,7 +27,6 @@ public class OrientationSetter : MonoBehaviour
             case Orientation.Portrait:
                 // Force screen to orient right, then switch to Auto
                 Screen.orientation = UnityEngine.ScreenOrientation.Portrait;
-                Screen.orientation = UnityEngine.ScreenOrientation.AutoRotation;
 
                 Screen.autorotateToPortrait = Screen.autorotateToPortraitUpsideDown = true;
                 Screen.autorotateToLandscapeLeft = Screen.autorotateToLandscapeRight = false;
