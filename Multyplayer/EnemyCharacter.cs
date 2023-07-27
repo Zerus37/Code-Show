@@ -7,15 +7,18 @@ public class EnemyCharacter : MonoBehaviour
 	public void SetTagetPosition(Vector3 position)
 	{
 		_targetPosition = position;
+
+		//"РџСЂРµРґСЃРєР°Р·Р°РЅРёРµ" С‚СѓС‚ РЅСѓР¶РЅРѕ РєР°Рє СЃРїРѕСЃРѕР± РєРѕРјРїРµРЅСЃРёСЂРѕРІР°С‚СЊ РїРёРЅРі
+		_targetPosition += _targetPosition - transform.position; //"РџСЂРµРґСЃРєР°Р·Р°РЅРёРµ" С‡С‚Рѕ РїСЂРѕС‚РёРІРЅРёРє Р±СѓРґРµС‚ РґРµР»Р°С‚СЊ Рё СЃР»РµРґСѓСЋС‰РёР№ С€Р°Рі РІ С‚РѕРј Р¶Рµ РЅР°РїСЂР°РІР»РµРЅРёРё
 	}
 
 	private void Awake()
 	{
-		_targetPosition = transform.position; //Иначе, без ввода, модель врага со старта стремится в нулевую точку карты
+		_targetPosition = transform.position; //РРЅР°С‡Рµ, Р±РµР· РІРІРѕРґР°, РјРѕРґРµР»СЊ РІСЂР°РіР° СЃРѕ СЃС‚Р°СЂС‚Р° СЃС‚СЂРµРјРёС‚СЃСЏ РІ РЅСѓР»РµРІСѓСЋ С‚РѕС‡РєСѓ РєР°СЂС‚С‹
 	}
 
 	private void Update()
 	{
-		transform.position = Vector3.Lerp(transform.position, _targetPosition, 0.25f); // 0.25f в бинарном виде более "круглое", что может сэкономить пару фреймов
+		transform.position = Vector3.Lerp(transform.position, _targetPosition, 0.25f); // 0.25f РІ Р±РёРЅР°СЂРЅРѕРј РІРёРґРµ Р±РѕР»РµРµ "РєСЂСѓРіР»РѕРµ", С‡С‚Рѕ РјРѕР¶РµС‚ СЃСЌРєРѕРЅРѕРјРёС‚СЊ РїР°СЂСѓ С„СЂРµР№РјРѕРІ
 	}
 }
