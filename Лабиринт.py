@@ -3,7 +3,7 @@ from time import sleep
 from random import *
 
 cell_size = 40
-labirint_size = 5
+labirint_size = 15
 
 turtle = Turtle()
 turtle.pensize(3)
